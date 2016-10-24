@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-   <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Clustering</title>
     <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
       #map {
-        width: 100%;
-        height: 400px;
-        background-color: grey;
+        height: 100%;
       }
-	  
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
     </style>
   </head>
   <body>
-	<fieldset>
-	<h1>PROJEKT GIS</h1>
-    <h3>atrakcje turystyczne w trójmieście i okolicach</h3>
-	<h5>autor Piotr Słupczewski 2016</h5>
-    </fieldset>
-	<div id="map"></div>
-	
-	<!-- nagłówek -->
-	
-	<script>
+    <div id="map"></div>
+    <script>
+
       function initMap() {
-        var wspolrzedne = {lat: 54.379903, lng: 18.493576}; // wsplorzedne inicjalizacji srodka mapy - Lotniska im. Walesy
+
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 9,
-          center: wspolrzedne
-        });
-        var marker = new google.maps.Marker({
-          position: wspolrzedne,
-          map: map
+          zoom: 3,
+          center: {lat: 54.392, lng: 18.579}
         });
 
-	    // tablica to przechowywania znakow do etykiet
+        // Create an array of alphabetical characters used to label the markers.
         var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
         // Add some markers to the map.
@@ -52,35 +48,14 @@
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
       var locations = [
-	  
-        {lat: 54.3958446, lng: 18.6791611}, // wspolrzedne Twierdzy Wisloujscie
-        {lat: 54.3662345, lng: 18.6333818},  // wspolrzednie Pomnika Czolgistow
-		{lat: 54.2263371, lng: 18.1257875}  // wspolrzednie Wiezy WIdokowej w Szymbarku
+        {lat: 54.3921378, lng: 18.5794066},
+        {lat: 54.3662345, lng: 18.6333818}
       ]
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
-	
-	
-	<script async defer
+    <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0Sw7I4u88335ypaY520YYxDGMj4V0lD8&callback=initMap">
     </script>
-	
-	<!-- legenda -->
-	<fieldset><legend>LEGENDA</legend>
-	Punktem odniesienia oznaczonym kropkąjest Lotnisko im. Walesy<br><br>
-	
-	A - Twierdza Wisłoujście<br>
-	B - Pomnik Czołgistów<br>
-	C - Wieża widokowa w Szymbarku<br><br>
-	</fieldset>
-	
-	
-	<!-- stopka -->
-	<fieldset>
-	<h8>wszelkie prawa zastrzeżone</h8>
-    </fieldset>
-	
-	
   </body>
 </html>
