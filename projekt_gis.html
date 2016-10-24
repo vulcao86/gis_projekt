@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <title>
+  __trójmiejski turysta
+  </title>
    <meta charset="utf-8">
     <style>
       #map {
@@ -51,11 +54,16 @@
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
+	  
+	  
       var locations = [
 	  
         {lat: 54.3958446, lng: 18.6791611}, // wspolrzedne Twierdzy Wisloujscie
         {lat: 54.3662345, lng: 18.6333818},  // wspolrzednie Pomnika Czolgistow
-		{lat: 54.2263371, lng: 18.1257875}  // wspolrzednie Wiezy WIdokowej w Szymbarku
+		{lat: 54.2263371, lng: 18.1257875},  // wspolrzednie Wiezy WIdokowej w Szymbarku
+		{lat: 54.4062365, lng: 18.6650217}, // pomnik Westerplatte
+		{lat: 54.3592272, lng: 18.7962239} // rezerwat Ptasi Raj
+
       ]
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
@@ -68,17 +76,19 @@
 	
 	<!-- legenda -->
 	<fieldset><legend>LEGENDA</legend>
-	Punktem odniesienia oznaczonym kropkąjest Lotnisko im. Walesy<br><br>
+	Punktem odniesienia oznaczonym kropką jest Lotnisko im. Walesy<br><br>
 	
 	A - Twierdza Wisłoujście<br>
 	B - Pomnik Czołgistów<br>
-	C - Wieża widokowa w Szymbarku<br><br>
+	C - Wieża widokowa w Szymbarku<br>
+	D - Pomnik Westerplatte<br>
+	E - Rezerwat Ptasi Raj<br><br>
 	</fieldset>
 	
 	
 	<!-- stopka -->
 	<fieldset>
-	<h8>wszelkie prawa zastrzeżone</h8>
+	<h8>wszelkie prawa do kodu źrodłowego zastrzeżone</h8>
     </fieldset>
 	
 	
