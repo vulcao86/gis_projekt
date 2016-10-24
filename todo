@@ -1,6 +1,6 @@
 1. funkcjonalności
 a. dodać mierzenie dystansu od lotniska do poszczególnych punktów
-b.=======
+b. =======
 dodanie narzedzia, ktore wytnie i przekonwertuje wspolorzedne z URLa w googlemaps obiektu, ktory chcemy dodac na formatowanie przez nas pożądane:
 
 format wejsciowy
@@ -19,7 +19,8 @@ gdzie %1 i %2 to wspolrzedne z poprzedniego kroku
 format wyjsciowy:
 {lat: 54.3958446, lng: 18.6791611}
 ======
+c.dodać możliwość zaznaczania/odznaczania miejsc, które już się odwiedziło
 
 2. nice to have`s
-dodać więcej POIs
-szczegółowa legenda z podziałem na kategorie
+a. dodać więcej POIs
+b. szczegółowa legenda z podziałem na kategorie
