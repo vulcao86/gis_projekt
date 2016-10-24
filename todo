@@ -1,2 +1,25 @@
-dodać mierzenie dystansu od lotniska do poszczególnych punktów
+1. funkcjonalności
+a. dodać mierzenie dystansu od lotniska do poszczególnych punktów
+b.=======
+dodanie narzedzia, ktore wytnie i przekonwertuje wspolorzedne z URLa w googlemaps obiektu, ktory chcemy dodac na formatowanie przez nas pożądane:
+
+format wejsciowy
+https://www.google.pl/maps/place/Westerplatte/@54.4061562,18.6654733,17z/data=!4m5!3m4!1s0x0:0x69a7651275b4b5a2!8m2!3d54.4067051!4d18.6669677?hl=pl
+
+wycinamy to co od małpy do drugiego przecinka
+54.4061562,18.6654733
+
+grupujemy:
+54.4061562 18.6654733
+
+wrzucamy wspolrzedne w formatkę:
+{lat: %1, lng: %2}
+gdzie %1 i %2 to wspolrzedne z poprzedniego kroku
+
+format wyjsciowy:
+{lat: 54.3958446, lng: 18.6791611}
+======
+
+2. nice to have`s
 dodać więcej POIs
+szczegółowa legenda z podziałem na kategorie
