@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8">
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+	  
+    </style>
+  </head>
+  <body>
+	<fieldset>
+	<h1>PROJEKT GIS</h1>
+    <h3>mapa trójmiasta w googlemaps API</h3>
+    </fieldset>
+	<div id="map"></div>
+	
+	<!-- nagłówek -->
+	
+	<script>
+      function initMap() {
+        var wspolrzedne = {lat: 54.3921378, lng: 18.5794066};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: wspolrzedne
+        });
+        var marker = new google.maps.Marker({
+          position: wspolrzedne,
+          map: map
+        });
+
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0Sw7I4u88335ypaY520YYxDGMj4V0lD8 &callback=initMap">
+    </script>
+	
+		<fieldset>
+	<h7>autor Piotr Słupczewski 2016</h7>
+
+    </fieldset>
+		<!-- stopka -->
+	
+  </body>
+</html>
