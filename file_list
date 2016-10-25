@@ -1,4 +1,12 @@
-projekt_gis.html - główny plik
-readme.txt - hitoria zmian
-file_list.txt - plik z listą plików
-marker_clustering.html - przykład wykorzystany do użycia klastrowania znaczników
+
+drwxr-xr-x 3 p1t3r p1t3r 4096 Oct 25 04:12 ./
+drwxr-xr-x 3 p1t3r p1t3r 4096 Oct 25 03:53 ../
+-rw-r--r-- 1 p1t3r p1t3r  182 Oct 25 03:53 file_list - ten plik
+drwxr-xr-x 8 p1t3r p1t3r 4096 Oct 25 04:01 .git/ - konf do gita
+-rwxrwxrwx 1 p1t3r p1t3r  229 Oct 25 03:56 konwertuj_wspolrzedne.sh* - konwerter wsplorzednych URL=>GoogleMaps API format
+-rw-r--r-- 1 p1t3r p1t3r 2088 Oct 25 03:53 marker_clustering.html - przyklad uzycia klastrowania znacznikow
+-rw-r--r-- 1 p1t3r p1t3r  413 Oct 25 04:07 miejsca.csv - plik z zapisanymi urlami z googlemaps z wsplorzednymi potencjalnego miejsca wartego dodania do bazy POI
+-rw-r--r-- 1 p1t3r p1t3r  245 Oct 25 04:07 miejsca_gotowe.csv - wspolrzedne przetwarzanych URLI, ostatnia linia to ostatnio dodany URL do analizy
+-rw-r--r-- 1 p1t3r p1t3r 3291 Oct 25 04:12 projekt_gis.html - core aplikacji
+-rw-r--r-- 1 p1t3r p1t3r  544 Oct 25 03:53 README.md - readme
+-rw-r--r-- 1 p1t3r p1t3r  859 Oct 25 03:53 todo - lista do zrobienia
