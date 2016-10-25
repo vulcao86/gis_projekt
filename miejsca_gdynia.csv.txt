@@ -1,0 +1,5 @@
+https://www.google.pl/maps/place/Wie%C5%BCa+widokowa+w+Kolibkach/@54.4642708,18.5327654,15.3z/data=!4m12!1m6!3m5!1s0x46fda09c4c42799f:0x28d60ea380695fb6!2skolibki!8m2!3d54.4725636!4d18.5559119!3m4!1s0x0:0xf27a9dda5deecdbe!8m2!3d54.4669653!4d18.5430712?hl=pl
+https://www.google.pl/maps/place/Molo+w+Or%C5%82owie/@54.4825498,18.5526353,15z/data=!4m12!1m6!3m5!1s0x46fda09c4c42799f:0x28d60ea380695fb6!2skolibki!8m2!3d54.4725636!4d18.5559119!3m4!1s0x0:0x6dde2a2e07ae3590!8m2!3d54.4799436!4d18.5654032?hl=pl
+https://www.google.pl/maps/place/Klif+Or%C5%82owski/@54.4844069,18.5544926,15.06z/data=!4m12!1m6!3m5!1s0x46fda09c4c42799f:0x28d60ea380695fb6!2skolibki!8m2!3d54.4725636!4d18.5559119!3m4!1s0x0:0xe547266bcbdc264b!8m2!3d54.4852322!4d18.568823?hl=pl
+https://www.google.pl/maps/place/Centrum+Nauki+EXPERYMENT/@54.4937674,18.5383364,15.06z/data=!4m12!1m6!3m5!1s0x46fda09c4c42799f:0x28d60ea380695fb6!2skolibki!8m2!3d54.4725636!4d18.5559119!3m4!1s0x0:0x942e03e63885c086!8m2!3d54.4952996!4d18.538152?hl=pl
+https://www.google.pl/maps/place/molo+Brze%C5%BAno/@54.4081785,18.6247113,15z/data=!4m5!3m4!1s0x0:0x5089a49098d0fca5!8m2!3d54.4143039!4d18.6253104?hl=pl
