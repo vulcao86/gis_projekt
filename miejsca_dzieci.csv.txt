@@ -1,0 +1,3 @@
+https://www.google.pl/maps/place/Loopy's+World/@54.3906634,18.5855229,17.06z/data=!4m5!3m4!1s0x46fd74db8c23187b:0x73505991ef0029b4!8m2!3d54.3906443!4d18.5876227?hl=pl
+https://www.google.pl/maps/place/Aquapark+Sopot/@54.4599979,18.5556688,17z/data=!3m1!4b1!4m5!3m4!1s0x46fd0a7faae25b45:0xd21cc82100a96e0a!8m2!3d54.4599948!4d18.5578575?hl=pl
+https://www.google.pl/maps/place/JUMPCITY+Gdynia/@54.5249063,18.5361164,17z/data=!3m1!4b1!4m5!3m4!1s0x46fda723cf5b5dc7:0x39cd3ce70ed7b940!8m2!3d54.5249032!4d18.5383051?hl=pl
