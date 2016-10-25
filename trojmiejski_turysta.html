@@ -8,7 +8,7 @@
     <style>
       #map {
         width: 80%;
-        height: 500px;
+        height: 600px;
         background-color: grey;
       }
 	  
@@ -17,18 +17,20 @@
   <body bgcolor="#E6E6FA">
   	<!-- nagłówek -->
 	<fieldset>
-	<h1>#TRÓJMIEJSKI TURYSTA</h1>
-	<h2>interaktywny przewodnik wykorzystujący GoogleMaps API</h2>
+	<legend>
+	<h2>TRÓJMIEJSKI TURYSTA- interaktywny przewodnik po trójmieście wykorzystujący GoogleMaps API</h2>
+	</legend>
 	<h3>atrakcje turystyczne w trójmieście i okolicach</h3>
 	<h5>autor Piotr Słupczewski 2016</h5>
-    </fieldset>
+  	</fieldset>
+	<!--MAPA--!>
 	<fieldset>
 	<div id="map"></div>
 	</fieldset>
-
+	<br><br>
 	<script>
       function initMap() {
-        var wspolrzedne = {lat: 54.379903, lng: 18.493576}; // wsplorzedne inicjalizacji srodka mapy - Lotniska im. Walesy
+        var wspolrzedne = {lat: 54.379903, lng: 18.493576}; // wspolrzedne inicjalizacji srodka mapy - Lotniska im. Walesy
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 9,
           center: wspolrzedne
@@ -73,7 +75,11 @@
 	{lat: 54.4054872, lng: 18.5969678}, // Park im. Ronalda Reagana
 	{lat: 54.3858642, lng: 18.6620403}, // Stadion Energa Gdańsk 
 	{lat: 54.384044, lng: 18.610013}, // Fontanna na placu Wybickiego
-	{lat: 54.5085996, lng: 18.5993132} // Akwarium Gdyńskie
+	{lat: 54.5085996, lng: 18.5993132}, // Akwarium Gdyńskie
+	{lat: 54.4825498, lng: 18.5526353}, // WIeża widokowa w Kolibkach
+	{lat: 54.4844069, lng: 18.5544926}, // Molo w Orłowie
+	{lat: 54.4937674, lng: 18.5383364}, // Centrum Nauki EXPERYMENT
+	{lat: 54.5023296, lng: 18.5541659} // Polanka Redłowska
 
 
       ]
@@ -92,6 +98,7 @@
 	3. Poniżej znajduje się legenda - spis miejsc (POI) oznaczonych na mapie<br><br>
 	4. Możesz ograniczyć wybór do jednego z miast lub okolic (opcja "poza trójmiastem") i tym samym wyświetlić atrakcje tylko dla jednego z obszarów
 	</fieldset>
+	<br><br>
 	<!-- legenda -->
 	<fieldset><legend>LEGENDA</legend>
 	
@@ -116,7 +123,12 @@
 	K - Park im. Ronalda Reagana<br>
 	L - Stadion Energa Gdańsk<br>
 	M - Fontanna na placu Wybickiego<br>
-	N - Akwarium Gdyńskie<br>
+	N! - Akwarium Gdyńskie<br>
+	O! - Wieża widokowa w Kolibkach<br>
+	P! - Molo w Orłowie<br>
+	Q - Centrum Nauki EXPERYMENT<br>
+	R - Polanka Redłowska<br>
+	
 	<br>
 
 	</fieldset>

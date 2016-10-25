@@ -1,4 +1,8 @@
-# gis_projekt
+ver. 1.0.2 2016-10-25
+
+- dodano parser do adresów url z googlemaps zawierajacych wspolrzedne obiektow
+- drobne poprawki wizualne
+- okolo 20 POI's
 
 
 ver. 1.0.1 2016-10-25
