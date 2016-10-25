@@ -7,7 +7,7 @@
    <meta charset="utf-8">
     <style>
       #map {
-        width: 100%;
+        width: 80%;
         height: 500px;
         background-color: grey;
       }
@@ -88,10 +88,19 @@
 	1. Punktem odniesienia oznaczonym kropką jest Lotnisko im. Walesy<br><br>
 	2. Kliknij na kolorowe kółko z liczbą atrakcji w danym rejonie w celu uzyskania szczegółowych informacji o konkretnych lokalizacjach w okolicy<br><br>
 	3. Poniżej znajduje się legenda - spis miejsc (POI) oznaczonych na mapie
+	4. Możesz ograniczyć wybór do jednego z miast lub okolic (opcja "poza trójmiastem") i tym samym wyświetlić atrakcje tylko dla jednego z obszarów
 	</fieldset>
 	<!-- legenda -->
 	<fieldset><legend>LEGENDA</legend>
 	
+	
+	<select name=lista_miast form="miasta">
+	<option value="Gdańsk">Gdańsk</option>
+	<option value="Sopot">Sopot</option>
+	<option value="Gdynia">Gdynia</option>
+	<option value="Poza trójmiastem">Poza trójmiastem</option>
+	</select><br><br>
+
 	A - Twierdza Wisłoujście<br>
 	B - Pomnik Czołgistów<br>
 	C - Wieża widokowa w Szymbarku<br>
