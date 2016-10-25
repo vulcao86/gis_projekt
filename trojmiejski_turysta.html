@@ -19,7 +19,7 @@
 	<div>
 		<fieldset>
 			<legend>
-				<h2>TRÓJMIEJSKI TURYSTA- interaktywny przewodnik po trójmieście wykorzystujący GoogleMaps API</h2>
+				<h2>TRÓJMIEJSKI TURYSTA - interaktywny przewodnik po trójmieście</h2>
 			</legend>
 			<h7>atrakcje turystyczne w trójmieście i okolicach</h7>
 			<h8>autor Piotr Słupczewski 2016</h8>
@@ -30,6 +30,9 @@
 		<div style="width: 80%; float: left">
 			<!--MAPA-->
 			<fieldset>
+			<legend>
+				MAPA
+			</legend>
 				<div id="map"></div>
 			</fieldset>
 			<script>
@@ -91,8 +94,24 @@
 	
 				{lat: 54.3906634, lng: 18.5855229}, // Loopy`s World
 				{lat: 54.4599979, lng: 18.5556688}, // AquaPark SOpot
-				{lat: 54.5249063, lng: 18.5361164} // Jump City
-	
+				{lat: 54.5249063, lng: 18.5361164}, // Jump City
+
+				// miejsca poza trojmiastem
+				{lat: 54.4206255, lng: 18.5059221},
+				{lat: 54.3362758, lng: 18.1785754},
+				{lat: 54.3439024, lng: 18.1248128},
+				{lat: 54.3283309, lng: 19.1635032},
+				{lat: 54.264359, lng: 18.0752463},
+				{lat: 54.1313779, lng: 18.4474935},
+				{lat: 54.3394901, lng: 18.9633035},
+				{lat: 54.3393028, lng: 19.2209615},
+				{lat: 54.6086994, lng: 18.5030418},
+				{lat: 54.7875789, lng: 18.0763848},
+				{lat: 54.8274718, lng: 18.0784074},
+				{lat: 54.516979, lng: 18.2803482},
+				{lat: 54.2323438, lng: 17.8449477},
+				{lat: 54.2573909, lng: 18.0039209}
+
 
 			      ]
 			</script>
@@ -140,7 +159,8 @@
 				U - AquaPark Sopot<br>
 				V - Jump City<br>
 
-				! - lokalizacja niedokładna<br>
+				! - obok id lokalizacji niedokładne współrzędne<br>
+				<hr size=2>
 				<br>
 
 			</fieldset>
@@ -150,12 +170,15 @@
 	<!-- instrukcja-->
 		<fieldset>
 			<legend>INSTRUKCJA</legend>
-			1. Punktem odniesienia oznaczonym kropką jest Lotnisko im. L. Wałęsy (Lech Walesa Airport)<br><br>
-			2. Kliknij na kolorowe kółko z liczbą atrakcji w danym rejonie w celu uzyskania szczegółowych informacji o konkretnych lokalizacjach w okolicy<br><br>
-			3. Poniżej znajduje się legenda - spis miejsc (POI) oznaczonych na mapie<br><br>
-			4. Poszczególne litery alfabetu oznaczają miejsca warte odwiedzenia zawarte w naszej bazie danych<br><br>
-			5. Możesz ograniczyć wybór do jednego z miast lub okolic (opcja "poza trójmiastem") i tym samym wyświetlić atrakcje tylko dla jednego z obszarów - W FAZIE TESTÓW<br><br>
-			6. Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi<br>
+				<ol>
+				1. Punktem odniesienia oznaczonym kropką jest Lotnisko im. L. Wałęsy (Lech Walesa Airport)<br><br>
+				2. Kliknij na kolorowe kółko z liczbą atrakcji w danym rejonie w celu uzyskania szczegółowych informacji o konkretnych lokalizacjach w okolicy<br><br>
+				<img src="cluster_photo.png"></img>
+				3. Poniżej znajduje się legenda - spis miejsc (POI) oznaczonych na mapie<br><br>
+				4. Poszczególne litery alfabetu oznaczają miejsca warte odwiedzenia zawarte w naszej bazie danych<br><br>
+				5. Możesz ograniczyć wybór do jednego z miast lub okolic (opcja "poza trójmiastem") i tym samym wyświetlić atrakcje tylko dla jednego z obszarów - W FAZIE TESTÓW<br><br>
+				6. Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi<br>
+				</ol>		
 		</fieldset>
 		<br><br>
 	</div>
