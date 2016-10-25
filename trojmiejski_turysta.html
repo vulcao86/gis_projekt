@@ -14,7 +14,7 @@
 	  
     </style>
   </head>
-  <body>
+  <body bgcolor="#E6E6FA">
 	<fieldset>
 	<h1>#TRÓJMIEJSKI TURYSTA</h1>
 	<h2>interaktywny przewodnik wykorzystujący GoogleMaps API</h2>
@@ -24,9 +24,6 @@
 	<div id="map"></div>
 	
 	<!-- nagłówek -->
-	<p>
-	kliknij na kolorowe kółko z liczbą atrakcji, żeby poznać szczegółowe lokalizacje
-	</p>
 	<script>
       function initMap() {
         var wspolrzedne = {lat: 54.379903, lng: 18.493576}; // wsplorzedne inicjalizacji srodka mapy - Lotniska im. Walesy
@@ -68,8 +65,8 @@
 	{lat: 54.3592272, lng: 18.7962239}, // rezerwat Ptasi Raj
 	{lat: 54.3740043, lng: 18.5918122},  // Podleśna Polana
 	{lat: 54.3920682, lng: 18.5281136}, // Diabelski Kamień
-	{lat: 54.3725803, lng: 18.6123986} // Nowe ETI
-
+	{lat: 54.3725803, lng: 18.6123986}, // Nowe ETI
+	{lat: 54.3577307, lng: 18.64007} // Krzyż Milenijny
 
       ]
     </script>
@@ -80,10 +77,14 @@
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0Sw7I4u88335ypaY520YYxDGMj4V0lD8&callback=initMap">
     </script>
-	
+	<!-- instrukcja-->
+	<fieldset><legend>INSTRUKCJA</legend>
+	1. Punktem odniesienia oznaczonym kropką jest Lotnisko im. Walesy<br><br>
+	2. Kliknij na kolorowe kółko z liczbą atrakcji w danym rejonie w celu uzyskania szczegółowych informacji o konkretnych lokalizacjach w okolicy<br><br>
+	3. Poniżej znajduje się legenda - spis miejsc (POI) oznaczonych na mapie
+	</fieldset>
 	<!-- legenda -->
 	<fieldset><legend>LEGENDA</legend>
-	Punktem odniesienia oznaczonym kropką jest Lotnisko im. Walesy<br><br>
 	
 	A - Twierdza Wisłoujście<br>
 	B - Pomnik Czołgistów<br>
@@ -93,7 +94,9 @@
 	F - Podleśna Polana<br>
 	G - Diabelski Kamień<br>
 	H - Nowe ETI<br>
+	I - Krzyż Milenijny<br>
 	<br>
+
 	</fieldset>
 	
 	
