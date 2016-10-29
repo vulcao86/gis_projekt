@@ -47,8 +47,16 @@
 				  map: map
 				});
 
-				// tablica do przechowywania znakow do etykiet
-				var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+				// stara tablica do przechowywania znakow do etykiet
+				//var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+				
+				//nowa tablica etykiet tworzona dynamicznie w pętli
+				var labels = []
+				for (var i = 1; i <=100; i++){
+					
+					a = i.toString()
+					labels.push(a)
+				};
 
 				// Add some markers to the map.
 				// Note: The code uses the JavaScript Array.prototype.map() method to
