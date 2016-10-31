@@ -1,4 +1,4 @@
-lo<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
   <title>
@@ -24,6 +24,13 @@ lo<!DOCTYPE html>
 			<h7>atrakcje turystyczne w trójmieście i okolicach</h7>
 			<h8>autor Piotr Słupczewski 2016</h8>
 	  	</fieldset>
+		Choose language
+				<select name=jezyk form="jezyk">
+				<option value="polski">polski</option>
+				<option value="angielski">angielski</option>
+				<option value="niemiecki">niemiecki</option>
+				<option value="francuski">francuski</option>
+				</select><br><br>
 	</div>
 	<hr>
 	<div style="width: 100%">
@@ -52,7 +59,7 @@ lo<!DOCTYPE html>
 				
 				//nowa tablica etykiet tworzona dynamicznie w pętli
 				var labels = []
-				for (var i = 1; i <=100; i++){
+				for (var i = 1; i <=liczba_linii; i++){
 					
 					a = i.toString()
 					labels.push(a)
@@ -125,7 +132,7 @@ lo<!DOCTYPE html>
 				
 							
 			var liczba_linii = locations.length;		// popup z liczba linii zmiennej locations - liczbie lokacji
-			window.alert("Witaj w naszej aplikacji TRÓJMIEJSKI TURYSTA!\n\n\nMamy już " + liczba_linii + " obiektów w bazie!");
+			window.alert("Witaj w naszej aplikacji TRÓJMIEJSKI TURYSTA!\n\n\nMamy już " + liczba_linii + " obiektów w bazie!\n\n\nDzisiaj polecamy odwiedzić $RANDOM_LOCATION");
 	
 			var txtFile = new XMLHttpRequest();
 			txtFile.open("GET", "wspolrzedne_all.txt", true);
@@ -143,20 +150,31 @@ lo<!DOCTYPE html>
 		<!-- legenda -->
 			<fieldset><legend>LEGENDA</legend>
 	
-	
+	<!-- kategorie -->
 				<select name=lista_miast form="miasta">
+				<option value="Wszystkie">Wszystkie</option>
 				<option value="Gdańsk">Gdańsk</option>
 				<option value="Sopot">Sopot</option>
 				<option value="Gdynia">Gdynia</option>
 				<option value="Poza trójmiastem">Poza trójmiastem</option>
-				</select><br><br>
+				</select>wybierz miasta<br><br>
 
+				<hr size=2>
+				<select name=kategorie form="kategorie">
+				<option value="Wszystkie">Wszystkie</option>
+				<option value="Muzeum">Muzeum</option>
+				<option value="Natura">Natura</option>
+				<option value="Pomnik">Pomnik</option>
+				<option value="Militaria">Militaria</option>
+				<option value="Sport">Sport</option>		
+				</select>wybierz kategorię<br><br>
 				<hr size=2>
 
 				<select name=dla_kogo form="Dla_kogo">
 				<option value="Wszyscy">Wszyscy</option>
 				<option value="Dzieci">Dzieci</option>
-				</select><br><br>
+				<option value="Seniorzy">Seniorzy</option>
+				</select>wybierz wiek<br><br>
 				<hr size=2>
 
 				1 - Twierdza Wisłoujście<br>
@@ -225,8 +243,8 @@ lo<!DOCTYPE html>
 				<img float=left src="cluster_photo.png"></img></li>
 				<img float=left src="mapa2.png"></img></li>
 				<li> Poniżej znajduje się legenda - spis miejsc (POI) oznaczonych na mapie<br><br></li>
-				<li> Poszczególne litery alfabetu oznaczają miejsca warte odwiedzenia zawarte w naszej bazie danych<br><br></li>
-				<li> Możesz ograniczyć wybór do jednego z miast lub okolic (opcja "poza trójmiastem") i tym samym wyświetlić atrakcje tylko dla jednego z obszarów - W FAZIE TESTÓW<br><br></li>
+				<li> Poszczególne miejsca warte odwiedzenia są oznaczone znacznikami z liczbami np. 1 - Twierdza WIsłoujście, patrz legenda<br><br></li>
+				<li> Możesz ograniczyć wybór do jednego z miast lub skorzystać z filtrowania po kategoriach - W FAZIE TESTÓW<br><br></li>
 				<li> Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi<br></li>
 				</ol>		
 		</fieldset>
@@ -237,9 +255,10 @@ lo<!DOCTYPE html>
 	<!-- stopka -->
 	<div>
 		<fieldset>
-			<h8>wszelkie prawa do kodu źrodłowego zastrzeżone</h8>
+			<h8>wszelkie prawa do tesktóœ oraz kodu źrodłowego zastrzeżone</h8>
 		</fieldset>
 	</div>
+
 	
   </body>
 </html>
