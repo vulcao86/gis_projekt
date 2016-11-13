@@ -1,0 +1,39 @@
+				var wspolrzedne = {lat: 54.379903, lng: 18.493576}; // wspolrzedne inicjalizacji srodka mapy - Lotniska im. Walesy
+				{lat: 54.3958446, lng: 18.6791611}, // wspolrzedne Twierdzy Wisloujscie
+				{lat: 54.3662345, lng: 18.6333818},  // wspolrzednie Pomnika Czolgistow
+				{lat: 54.2263371, lng: 18.1257875},  // wspolrzednie Wiezy WIdokowej w Szymbarku
+				{lat: 54.4062365, lng: 18.6650217}, // pomnik Westerplatte
+				{lat: 54.3592272, lng: 18.7962239}, // rezerwat Ptasi Raj
+				{lat: 54.3740043, lng: 18.5918122},  // Podleśna Polana
+				{lat: 54.3920682, lng: 18.5281136}, // Diabelski Kamień
+				{lat: 54.3725803, lng: 18.6123986}, // Nowe ETI
+				{lat: 54.3577307, lng: 18.64007}, // Krzyż Milenijny
+				{lat: 54.4110984, lng: 18.545246}, // Park Oliwski
+				{lat: 54.4054872, lng: 18.5969678}, // Park im. Ronalda Reagana
+				{lat: 54.3858642, lng: 18.6620403}, // Stadion Energa Gdańsk 
+				{lat: 54.384044, lng: 18.610013}, // Fontanna na placu Wybickiego
+				{lat: 54.5085996, lng: 18.5993132}, // Akwarium Gdyńskie
+				{lat: 54.4825498, lng: 18.5526353}, // WIeża widokowa w Kolibkach
+				{lat: 54.4844069, lng: 18.5544926}, // Molo w Orłowie
+				{lat: 54.4937674, lng: 18.5383364}, // Centrum Nauki EXPERYMENT
+				{lat: 54.5023296, lng: 18.5541659}, // Polanka Redłowska
+				{lat: 54.4081785, lng: 18.6247113}, // Molo w Brzeźnie
+				{lat: 54.3906634, lng: 18.5855229}, // Loopy`s World
+				{lat: 54.4599979, lng: 18.5556688}, // AquaPark SOpot
+				{lat: 54.5249063, lng: 18.5361164}, // Jump City
+				{lat: 54.4206255, lng: 18.5059221},
+				{lat: 54.3362758, lng: 18.1785754},
+				{lat: 54.3439024, lng: 18.1248128},
+				{lat: 54.3283309, lng: 19.1635032},
+				{lat: 54.264359, lng: 18.0752463},
+				{lat: 54.1313779, lng: 18.4474935},
+				{lat: 54.3394901, lng: 18.9633035},
+				{lat: 54.3393028, lng: 19.2209615},
+				{lat: 54.6086994, lng: 18.5030418},
+				{lat: 54.7875789, lng: 18.0763848},
+				{lat: 54.8274718, lng: 18.0784074},
+				{lat: 54.516979, lng: 18.2803482},
+				{lat: 54.2323438, lng: 17.8449477},
+				{lat: 54.2573909, lng: 18.0039209},
+				{lat: 54.5218293, lng: 18.5474492}
+				4 - Pomnik Westerplatte<br>
