@@ -1,3 +1,9 @@
+ver. 1.0.3 2016-11-23
+
+- instrukcja: mniejsze zdjęcia, więcej szczegółów
+- dodaję pole z inputem do wyszukiwarki
+- 30 POI`s
+
 ver. 1.0.2 2016-10-25
 
 - dodano parser do adresów url z googlemaps zawierajacych wspolrzedne obiektow
