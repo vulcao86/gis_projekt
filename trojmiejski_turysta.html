@@ -149,7 +149,7 @@
 			<!-- wybieracz języka -->
 		
 		<fieldset>
-		<legend>Wybierz język z listy</legend>
+		<legend>WYBIERZ JĘZYK</legend>
 
 				<select name=jezyk form="jezyk">
 				<option value="polski">polski</option>
@@ -183,8 +183,8 @@
 				<option value="Gdańsk">Gdańsk</option>
 				<option value="Sopot">Sopot</option>
 				<option value="Gdynia">Gdynia</option>
-				<option value="Poza trójmiastem">Poza trójmiastem</option>
-				</select>wybierz miasto<br><br>
+				<option value="Poza_trojmiastem">Inne</option>
+				</select>wybierz miasto
 
 				<hr size=2>
 				<select name=kategorie form="kategorie">
@@ -193,8 +193,10 @@
 				<option value="Natura">Natura</option>
 				<option value="Pomnik">Pomnik</option>
 				<option value="Militaria">Militaria</option>
-				<option value="Sport">Sport</option>		
-				</select>wybierz kategorię<br><br>
+				<option value="Sport">Sport</option>
+				<option value="Jezioro">Jezioro</option>
+				<option value="Extreme">Extreme</option>
+				</select>wybierz kategorię
 				<hr size=2>
 
 				<select name=dla_kogo form="Dla_kogo">
@@ -202,7 +204,15 @@
 				<option value="Dzieci">Dzieci</option>
 				<option value="Studenci">Studenci</option>
 				<option value="Seniorzy">Seniorzy</option>
-				</select>wybierz kategorię wiek<br><br>
+				</select>wybierz kategorię wiek
+				
+				<hr size=2>
+				<select name=odległosc_od_lotniska form="odleglosc_od_lotniska">
+				<option value=">5km">>5km</option>
+				<option value="5-10km">5-10km</option>
+				<option value="10-20km">10-20km</option>
+				<option value=">20km">>20km</option>
+				</select>wybierz odległość od lotniska
 				<hr size=2>
 
 				1 - Twierdza Wisłoujście<br>
@@ -216,11 +226,11 @@
 				9 - Krzyż Milenijny<br>
 				10 - Park Oliwski<br>
 				11 - Park im. Ronalda Reagana<br>
-				12! - Stadion Energa Gdańsk<br>
+				12 - Stadion Energa Gdańsk<br>
 				13 - Fontanna na placu Wybickiego<br>
-				14! - Akwarium Gdyńskie<br>
-				15! - Wieża widokowa w Kolibkach<br>
-				16! - Molo w Orłowie<br>
+				14 - Akwarium Gdyńskie<br>
+				15 - Wieża widokowa w Kolibkach<br>
+				16 - Molo w Orłowie<br>
 				17 - Centrum Nauki EXPERYMENT<br>
 				18 - Polanka Redłowska<br>
 				19 - Molo w Brzeźnie<br>
@@ -232,7 +242,7 @@
 				25 - Zamek w Łapalicach<br>
 				26 - Sztutowo<br>
 				27 - Rezerwat przyrody Ostrzycki Las<br>
-				28 - Pole golfowe w Postołowie
+				28 - Pole golfowe w Postołowie<br>
 				29 - Mewia Łacha<br>
 				30 - Kąty Rybacki<br>
 				31 - Wioska Rybacka Mechelinki<br>
@@ -240,22 +250,11 @@
 				33 - Plaża w Dębkach<br>
 				34 - Jezioro Bieszkowice<br>
 				35 - Kamienne Kręgi w Węsiorach<br>
-				36 - Jezioro Łączyno
+				36 - Jezioro Łączyno<br>
 				37 - Sea Towers Gdynia<br>
 				38 - Jezioro Tuchomskie<br>
 				39 - Jezioro Wysockie<br>
 				40 - Jezioro Otomińskie<br>
-				41 -<br>
-				42 -<br>
-				43 -<br>
-				44 - <br>
-				45 -<br>
-				46 -<br>
-				47 -<br>
-				48 -<br>
-		 		49 -<br>
-				50 -<br>
-				! - obok id lokalizacji niedokładne współrzędne<br>
 				<hr size=2>
 				<br>
 
@@ -267,28 +266,28 @@
 		<fieldset>
 			<legend>INSTRUKCJA</legend>
 				<ol>
-				<li> Punktem odniesienia oznaczonym kropką jest Lotnisko im. L. Wałęsy (Lech Walesa Airport)<br><br></li>
+				<li> Punktem odniesienia oznaczonym kropką jest Lotnisko im. Lecha Wałęsy (Lech Walesa Airport)<br><br></li>
 				<img float=left src="NFO/lotnisko.png"></img>
-				<li> Kliknij na kolorowe kółko z liczbą atrakcji w danym rejonie w celu uzyskania szczegółowych informacji o konkretnych lokalizacjach w okolicy<br><br></li>
+				<li> Kolorowe kółka oznaczają miejsca o większym zagęszczeniu atrakcji w danym obszarze. Kliknij na kolorowe kółko z liczbą atrakcji w danym rejonie w celu przybliżenia obszaru i uzyskania szczegółowych informacji o konkretnych lokalizacjach w zadanej okolicy<br><br></li>
 				<img float=left src="NFO/cluster_photo.png"></img></li>
 				<img float=left src="NFO/cluster_photo2.png"></img></li>
 				<img float=left src="NFO/cluster_photo3.png"></img></li>
 				<li> Obok znajduje się legenda - spis miejsc (POI) oznaczonych na mapie<br><br></li>
-				<li> Lokacje są oznaczone "przypinkami" z oznaczeniami liczby porządkowej lokacji z listy</li>
+				<li> Miejsca warto odwiedzenia (POI) są oznaczone "przypinkami" z oznaczeniami liczby porządkowej lokacji z listy</li>
 				<img float=left src="NFO/lokacja.png"></img>
 				<li> Poszczególne miejsca warte odwiedzenia są oznaczone znacznikami z liczbami np. 1 - Twierdza WIsłoujście, patrz legenda<br><br></li>
 				<li> Możesz ograniczyć wybór do jednego z miast lub skorzystać z filtrowania po kategoriach - W FAZIE TESTÓW<br><br></li>
-				<li> Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi<br></li>
+				<li> Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi - PREMIUM<br></li>
+				
 				</ol>		
 		</fieldset>
-		<br><br>
 	</div>
 	
 	
 	<!-- stopka -->
 	<div>
 		<fieldset>
-			<h8>wszelkie prawa do tesktóœ oraz kodu źrodłowego zastrzeżone</h8>
+			<h8>wszelkie prawa do tesktów oraz kodu źrodłowego zastrzeżone</h8>
 		</fieldset>
 	</div>
 
