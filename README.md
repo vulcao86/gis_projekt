@@ -1,4 +1,9 @@
-ver. 1.0.3 2016-11-23
+ver. 1.0.4 2016-11-15
+
+ - 40 POI`s wraz z opisami
+ - dokumentacja narzedzia do konwersji URLi konwertuj_wsplorzedne.sh
+
+ver. 1.0.3 2016-11-13
 
 - instrukcja: mniejsze zdjęcia, więcej szczegółów
 - dodaję pole z inputem do wyszukiwarki
