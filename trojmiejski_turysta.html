@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&v=3&libraries=geometry"></script>
   <title>
   3miejski turysta
   </title>
@@ -13,15 +14,24 @@
       }
 	  
     </style>
+	<style media="screen" type="text/css">
+
+	  .border {  border: 1px dotted black; }
+
+	</style>
   </head>
   <body bgcolor="#E6E6FA">
+  
+ 
+  
+  
   	<!-- nagłówek -->
 	<div>
 		<fieldset>
 			<legend>
 				<h2>TRÓJMIEJSKI TURYSTA - interaktywny przewodnik po trójmieście</h2>
 			</legend>
-			<h7>atrakcje turystyczne w trójmieście i okolicach</h7><br>
+			atrakcje turystyczne w trójmieście i okolicach<br>
 			<h8>autor Piotr Słupczewski 2016</h8><br>
 	  	</fieldset>
 	
@@ -59,6 +69,7 @@
 					labels.push(a)
 				};
 				console.log(labels);
+				console.log(distance);
 				// Add some markers to the map.
 				// Note: The code uses the JavaScript Array.prototype.map() method to
 				// create an array of markers based on a given "locations" array.
@@ -75,7 +86,12 @@
 				    {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 			      }
 				  
+				  //var latLngA = [{lat: 54.3958446, lng: 18.6791611}];
+				  //var latLngB = [{lat: 54.3662345, lng: 18.6333818}];
 				  
+				  
+				  // dodaje zmienna do liczenia dystansu miedzy dwiema wspolrzednymi. Wynik zwracany jest
+				  var distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(54.3958446, 18.6791611), new google.maps.LatLng(54.3662345, 18.6333818));
 			      var locations = [
 				  
 				{lat: 54.3958446, lng: 18.6791611}, // wspolrzedne Twierdzy Wisloujscie
@@ -265,21 +281,41 @@
 	<!-- instrukcja-->
 		<fieldset>
 			<legend>INSTRUKCJA</legend>
-				<ol>
+				<fieldset>
+				<ul>
 				<li> Punktem odniesienia oznaczonym kropką jest Lotnisko im. Lecha Wałęsy (Lech Walesa Airport)<br><br></li>
-				<img float=left src="NFO/lotnisko.png"></img>
+				<img float=left src="NFO/lotnisko.png" class="border"></img>
+				</fieldset>
+				<fieldset>
+				<ul>
 				<li> Kolorowe kółka oznaczają miejsca o większym zagęszczeniu atrakcji w danym obszarze. Kliknij na kolorowe kółko z liczbą atrakcji w danym rejonie w celu przybliżenia obszaru i uzyskania szczegółowych informacji o konkretnych lokalizacjach w zadanej okolicy<br><br></li>
-				<img float=left src="NFO/cluster_photo.png"></img></li>
-				<img float=left src="NFO/cluster_photo2.png"></img></li>
-				<img float=left src="NFO/cluster_photo3.png"></img></li>
+
+				<img float=left src="NFO/cluster_photo.png" class="border"></img></li>
+				<img float=left src="NFO/cluster_photo2.png" class="border"></img></li>
+				<img float=left src="NFO/cluster_photo3.png" class="border"></img></li>
+				<img float=left src="NFO/cluster_photo4.png" class="border"></img></li>
+								</fieldset>
+				<fieldset>
+				<ul>
 				<li> Obok znajduje się legenda - spis miejsc (POI) oznaczonych na mapie<br><br></li>
+				<img float=left src="NFO/legenda.png" class="border"></img></li>
+				</fieldset>
+				<fieldset>
+				<ul>
 				<li> Miejsca warto odwiedzenia (POI) są oznaczone "przypinkami" z oznaczeniami liczby porządkowej lokacji z listy</li>
-				<img float=left src="NFO/lokacja.png"></img>
+				<img float=left src="NFO/lokacja.png" class="border"></img>
+				</fieldset>
+				<fieldset>
+				<ul>
 				<li> Poszczególne miejsca warte odwiedzenia są oznaczone znacznikami z liczbami np. 1 - Twierdza WIsłoujście, patrz legenda<br><br></li>
+				</fieldset>
+				<fieldset>
+				<ul>
 				<li> Możesz ograniczyć wybór do jednego z miast lub skorzystać z filtrowania po kategoriach - W FAZIE TESTÓW<br><br></li>
-				<li> Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi - PREMIUM<br></li>
-				
-				</ol>		
+				</fieldset>
+				<fieldset>
+				<ul>
+				<li> Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi - PREMIUM<br></li>		
 		</fieldset>
 	</div>
 	
