@@ -1,6 +1,13 @@
 Aplikacja pozwala turystom odwiedzającym trójmiasto na znalezienie interesujących obiektów podczas pobytu. Wykorzystana jest biblioteka Googlemaps API, całość jest napisana w html/javascript/php. Dostępne jest również narzędzie do parsowania plików ze współrzędnymi z googlemaps napisane w bashu - ./konwerter_wspolrzednych.sh
 Uruchomienie następuje przez otwarcie pliku trojmiejski_turysta.html po czym na ekranie jest wyświetlana mapa wraz ze szczegółową instrukcją korzystania z aplikacji. Dodatkowo w sekcjach menu po prawej stronie można wybrać wersję językową, wyszukać interesujący nas obiekt za pośrednictwem okienka wyszukiwarki oraz dokonać filtracji obiektów w sekcji legendy mapy
 
+ver. 1.0.5 2016-11-16
+
+- przejscie na AngularJS
+- wyszukiwarka dziala po atrybutach obiektów
+- zmienna locations przeniesiona do scope`a angulara
+- mamy nastepujace atrybuty wg list - lat, lnd, desc, city
+
 ver. 1.0.4 2016-11-15
 
  - 40 POI`s wraz z opisami
