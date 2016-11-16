@@ -94,7 +94,7 @@
 			</legend>
 			<h7>atrakcje turystyczne w trójmieście i okolicach</h7><br>
 			<h8>autor Piotr Słupczewski 2016</h8><br>
-			<h4>{{AngularLocations[getRandomIndex(AngularLocations.length)].desc}}</h4>
+			
 	  	</fieldset>
 	
 	</div>
@@ -173,18 +173,12 @@
 		<div>
 		<fieldset>
 		<legend>WYSZUKIWARKA OBIEKTÓW</legend>
-		 <input ng-model="searchText">
-		<br>
 		wpisz nazwę poszukiwanego obiektu albo słowa kluczowe:
-		</fieldset>
-		
-		
-		
-		<div style="width: 20%; float: right">
-		<!-- legenda -->
-			<fieldset><legend>LEGENDA MAPY</legend>
-	
-	<!-- kategorie -->
+		 <input ng-model="searchText"><br>
+		<br>
+		lub<br>
+		wybierz interesujące Cię kategorie z poniższych listlist<br>
+			<!-- kategorie -->
 				<select name=lista_miast form="miasta">
 				<option value="Wszystkie">Wszystkie</option>
 				<option value="Gdańsk">Gdańsk</option>
@@ -220,6 +214,15 @@
 				<option value="10-20km">10-20km</option>
 				<option value=">20km">>20km</option>
 				</select>wybierz odległość od lotniska
+		</fieldset>
+		
+		
+		
+		<div style="width: 20%; float: right">
+		<!-- legenda -->
+			<fieldset><legend>LISTA OBIEKTÓW</legend>
+	
+
 				<hr size=2>
 				<p ng-repeat="location in AngularLocations | filter:searchText">{{ $index+1 }} - {{ location.desc }}</p>
 				<hr size=2>
@@ -245,7 +248,8 @@
 				<li> Miejsca warto odwiedzenia (POI) są oznaczone "przypinkami" z oznaczeniami liczby porządkowej lokacji z listy</li>
 				<img float=left src="NFO/lokacja.png"></img>
 				<li> Poszczególne miejsca warte odwiedzenia są oznaczone znacznikami z liczbami np. 1 - Twierdza WIsłoujście, patrz legenda<br><br></li>
-				<li> Możesz ograniczyć wybór do jednego z miast lub skorzystać z filtrowania po kategoriach - W FAZIE TESTÓW<br><br></li>
+				<li> Możesz skorzystać z wyszukiwarki - wpisz słowa kluczowe np. miasto, jezioro, pomnik (lub inny typ obiektu), odległość w km od lotniska<br><br></li>
+				<img float=left src="NFO/search.png"></img>
 				<li> Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi - PREMIUM<br></li>
 				
 				</ol>
