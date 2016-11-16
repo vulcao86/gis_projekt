@@ -1,9 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="MyApp">
   <head>
   <title>
   3miejski turysta
   </title>
+  <script src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+  <script type="text/javascript">
+	var sourceData=
+	{
+		"AngularLocations": [
+			{lat: 54.3958446, lng: 18.6791611, desc: 'Twierdza Wisłoujście', city: 'Gdańsk'}, // wspolrzedne Twierdzy Wisloujscie
+			{lat: 54.3662345, lng: 18.6333818, desc: 'Pomnik Czołgistów', city: 'Gdańsk'},  // wspolrzednie Pomnika Czolgistow
+			{lat: 54.2263371, lng: 18.1257875, desc: 'Wieża widokowa w Szymbarku'},  // wspolrzednie Wiezy WIdokowej w Szymbarku
+			{lat: 54.4062365, lng: 18.6650217, desc: 'Pomnik Westerplatte', city: 'Gdańsk'}, // pomnik Westerplatte
+			{lat: 54.3592272, lng: 18.7962239, desc: 'Rezerwat Ptasi Raj', city: 'Gdańsk'}, // rezerwat Ptasi Raj
+			{lat: 54.3740043, lng: 18.5918122, desc: 'Podleśna Polana', city: 'Gdańsk'},  // Podleśna Polana
+			{lat: 54.3920682, lng: 18.5281136, desc: 'Diabelski Kamień', city: 'Gdańsk'}, // Diabelski Kamień
+			{lat: 54.3725803, lng: 18.6123986, desc: 'Nowe ETI', city: 'Gdańsk'}, // Nowe ETI
+			{lat: 54.3577307, lng: 18.64007, desc: 'Krzyż Milenijny', city: 'Gdańsk'}, // Krzyż Milenijny
+			{lat: 54.4110984, lng: 18.545246, desc: 'Park Oliwski', city: 'Gdańsk'}, // Park Oliwski
+			{lat: 54.4054872, lng: 18.5969678, desc: 'Park im. Ronalda Reagana', city: 'Gdańsk'}, // Park im. Ronalda Reagana
+			{lat: 54.3858642, lng: 18.6620403, desc: 'Stadion Energa Gdańsk ', city: 'Gdańsk'}, // Stadion Energa Gdańsk 
+			{lat: 54.384044, lng: 18.610013, desc: 'Fontanna na placu Wybickiego', city: 'Gdańsk'}, // Fontanna na placu Wybickiego
+
+			{lat: 54.5085996, lng: 18.5993132, desc: 'Akwarium Gdyńskie'}, // Akwarium Gdyńskie
+			{lat: 54.4825498, lng: 18.5526353, desc: 'WIeża widokowa w Kolibkach'}, // WIeża widokowa w Kolibkach
+			{lat: 54.4844069, lng: 18.5544926, desc: 'Molo w Orłowie'}, // Molo w Orłowie
+			{lat: 54.4937674, lng: 18.5383364, desc: 'Centrum Nauki EXPERYMENT'}, // Centrum Nauki EXPERYMENT
+			{lat: 54.5023296, lng: 18.5541659, desc: 'Polanka Redłowska'}, // Polanka Redłowska
+			{lat: 54.4081785, lng: 18.6247113, desc: 'Molo w Brzeźnie'}, // Molo w Brzeźnie
+			//dla dzieci
+			{lat: 54.3906634, lng: 18.5855229, desc: 'Loopy`s World'}, // Loopy`s World
+			{lat: 54.4599979, lng: 18.5556688, desc: 'AquaPark Sopot'}, // AquaPark SOpot
+			{lat: 54.5249063, lng: 18.5361164, desc: 'Jump City'}, // Jump City
+			// miejsca poza trojmiastem
+			{lat: 54.4206255, lng: 18.5059221, desc: 'Zoo w Oliwie'},
+			{lat: 54.3362758, lng: 18.1785754, desc: 'Kartuzy'},
+			{lat: 54.3439024, lng: 18.1248128, desc: 'Zamek w Łapalicach'},
+			{lat: 54.3283309, lng: 19.1635032, desc: 'Sztutowo'},
+			{lat: 54.264359, lng: 18.0752463, desc: 'Rezerwat przyrody Ostrzycki Las'},
+			{lat: 54.1313779, lng: 18.4474935, desc: 'Pole golfowe w Postołowie'},
+			{lat: 54.3394901, lng: 18.9633035, desc: 'Mewia Łacha'},
+			{lat: 54.3393028, lng: 19.2209615, desc: 'Kąty Rybackie'},
+			{lat: 54.6086994, lng: 18.5030418, desc: 'Wioska Rybacka Mechelinki'},
+			{lat: 54.7875789, lng: 18.0763848, desc: 'Elektrownia Żarnowiec'},
+			{lat: 54.8274718, lng: 18.0784074, desc: 'Plaża w Dębkach'},
+			{lat: 54.2323438, lng: 17.8449477, desc: 'Kamienne Kręgi w Węsiorach'},
+			{lat: 54.5218293, lng: 18.5474492, desc: 'Sea Towers Gdynia'},
+			// jeziorka
+			{lat: 54.4283519, lng: 18.3577969, desc: 'Jezioro Tuchomskie'},
+			{lat: 54.516979, lng: 18.2803482, desc: 'Jezioro Bieszkowice'},
+			{lat: 54.2573909, lng: 18.0039209, desc: 'Jezioro Łączyno'},
+			{lat: 54.4256407, lng: 18.4468975, desc: 'Jezioro Wysockie'},
+			{lat: 54.3160901, lng: 18.4985713, desc: ' Jezioro Otomińskie'}
+		]
+	};
+	
+	var app = angular.module('MyApp',[]);		
+	app.controller("MapData",['$scope', function($scope) {
+		getRandomIndex = function(){
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+		for(var prop in sourceData)
+		{
+			$scope[prop] = sourceData[prop];
+		}
+	}]);  		
+	app.filter('num', function() {
+		return function(input) {
+		  return parseInt(input, 10);
+	
+		}
+	});
+	
+	</script>
    <meta charset="utf-8">
     <style>
       #map {
@@ -14,7 +85,7 @@
 	  
     </style>
   </head>
-  <body bgcolor="#E6E6FA">
+  <body bgcolor="#E6E6FA" ng-controller="MapData">
   	<!-- nagłówek -->
 	<div>
 		<fieldset>
@@ -23,6 +94,7 @@
 			</legend>
 			<h7>atrakcje turystyczne w trójmieście i okolicach</h7><br>
 			<h8>autor Piotr Słupczewski 2016</h8><br>
+			<h4>{{AngularLocations[getRandomIndex(AngularLocations.length)].desc}}</h4>
 	  	</fieldset>
 	
 	</div>
@@ -37,7 +109,7 @@
 				<div id="map"></div>
 			</fieldset>
 			<script>
-			      function initMap() {
+			    function initMap() {
 				var wspolrzedne = {lat: 54.379903, lng: 18.493576}; // wspolrzedne inicjalizacji srodka mapy - Lotniska im. Walesy
 				var map = new google.maps.Map(document.getElementById('map'), {
 				  zoom: 9,
@@ -58,12 +130,12 @@
 					a = i.toString()
 					labels.push(a)
 				};
-				console.log(labels);
+				
 				// Add some markers to the map.
 				// Note: The code uses the JavaScript Array.prototype.map() method to
 				// create an array of markers based on a given "locations" array.
 				// The map() method here has nothing to do with the Google Maps API.
-				var markers = locations.map(function(location, i) {
+				var markers = sourceData.AngularLocations.map(function(location, i) {
 				  return new google.maps.Marker({
 				    position: location,
 				    label: labels[i % labels.length]
@@ -73,74 +145,11 @@
 				// Add a marker clusterer to manage the markers.
 				var markerCluster = new MarkerClusterer(map, markers,
 				    {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-			      }
-				  
-				  
-			      var locations = [
-				  
-				{lat: 54.3958446, lng: 18.6791611}, // wspolrzedne Twierdzy Wisloujscie
-				{lat: 54.3662345, lng: 18.6333818},  // wspolrzednie Pomnika Czolgistow
-				{lat: 54.2263371, lng: 18.1257875},  // wspolrzednie Wiezy WIdokowej w Szymbarku
-				{lat: 54.4062365, lng: 18.6650217}, // pomnik Westerplatte
-				{lat: 54.3592272, lng: 18.7962239}, // rezerwat Ptasi Raj
-				{lat: 54.3740043, lng: 18.5918122},  // Podleśna Polana
-				{lat: 54.3920682, lng: 18.5281136}, // Diabelski Kamień
-				{lat: 54.3725803, lng: 18.6123986}, // Nowe ETI
-				{lat: 54.3577307, lng: 18.64007}, // Krzyż Milenijny
-				{lat: 54.4110984, lng: 18.545246}, // Park Oliwski
-				{lat: 54.4054872, lng: 18.5969678}, // Park im. Ronalda Reagana
-				{lat: 54.3858642, lng: 18.6620403}, // Stadion Energa Gdańsk 
-				{lat: 54.384044, lng: 18.610013}, // Fontanna na placu Wybickiego
-	
-				{lat: 54.5085996, lng: 18.5993132}, // Akwarium Gdyńskie
-				{lat: 54.4825498, lng: 18.5526353}, // WIeża widokowa w Kolibkach
-				{lat: 54.4844069, lng: 18.5544926}, // Molo w Orłowie
-				{lat: 54.4937674, lng: 18.5383364}, // Centrum Nauki EXPERYMENT
-				{lat: 54.5023296, lng: 18.5541659}, // Polanka Redłowska
-	
-				{lat: 54.4081785, lng: 18.6247113}, // Molo w Brzeźnie
-	
-	
-				{lat: 54.3906634, lng: 18.5855229}, // Loopy`s World
-				{lat: 54.4599979, lng: 18.5556688}, // AquaPark SOpot
-				{lat: 54.5249063, lng: 18.5361164}, // Jump City
-
-				// miejsca poza trojmiastem
-				{lat: 54.4206255, lng: 18.5059221},
-				{lat: 54.3362758, lng: 18.1785754},
-				{lat: 54.3439024, lng: 18.1248128},
-				{lat: 54.3283309, lng: 19.1635032},
-				{lat: 54.264359, lng: 18.0752463},
-				{lat: 54.1313779, lng: 18.4474935},
-				{lat: 54.3394901, lng: 18.9633035},
-				{lat: 54.3393028, lng: 19.2209615},
-				{lat: 54.6086994, lng: 18.5030418},
-				{lat: 54.7875789, lng: 18.0763848},
-				{lat: 54.8274718, lng: 18.0784074},
-				{lat: 54.516979, lng: 18.2803482},
-				{lat: 54.2323438, lng: 17.8449477},
-				{lat: 54.2573909, lng: 18.0039209},
-				{lat: 54.5218293, lng: 18.5474492},
-// jeziorka
-				{lat: 54.4283519, lng: 18.3577969},
-				{lat: 54.4256407, lng: 18.4468975},
-				{lat: 54.3160901, lng: 18.4985713}
-				
-				
-			      ]
-				
+			      } 
 							
-			var liczba_linii = locations.length;		// popup z liczba linii zmiennej locations - liczbie lokacji
+			var liczba_linii = sourceData.AngularLocations.length;		// popup z liczba linii zmiennej sourceData.AngularLocations - liczbie lokacji
 			window.alert("Witaj w naszej aplikacji TRÓJMIEJSKI TURYSTA!\n\n\nMamy już " + liczba_linii + " obiektów w bazie!\n\n\nDzisiaj polecamy odwiedzić $RANDOM_LOCATION");
 	
-			var txtFile = new XMLHttpRequest();
-			txtFile.open("GET", "wspolrzedne_all.txt", true);
-			allText = txtFile.responseText;
-			lines = txtFile.responseText.split("\n");
-			console.log("debug");			
-			console.log(lines);
-			console.log(allText);
-			console.log("debug");
 			</script>
 			<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"> </script>	
 			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0Sw7I4u88335ypaY520YYxDGMj4V0lD8&callback=initMap"> </script>
@@ -164,12 +173,10 @@
 		<div>
 		<fieldset>
 		<legend>WYSZUKIWARKA OBIEKTÓW</legend>
-		<input type=fields>
-		</input>
+		 <input ng-model="searchText">
 		<br>
 		wpisz nazwę poszukiwanego obiektu albo słowa kluczowe:
 		</fieldset>
-		</>
 		
 		
 		
@@ -214,47 +221,7 @@
 				<option value=">20km">>20km</option>
 				</select>wybierz odległość od lotniska
 				<hr size=2>
-
-				1 - Twierdza Wisłoujście<br>
-				2 - Pomnik Czołgistów<br>
-				3 - Wieża widokowa w Szymbarku<br>
-				4 - Pomnik Westerplatte<br>
-				5 - Rezerwat Ptasi Raj<br>
-				6 - Podleśna Polana<br>
-				7 - Diabelski Kamień<br>
-				8 - Nowe ETI<br>
-				9 - Krzyż Milenijny<br>
-				10 - Park Oliwski<br>
-				11 - Park im. Ronalda Reagana<br>
-				12 - Stadion Energa Gdańsk<br>
-				13 - Fontanna na placu Wybickiego<br>
-				14 - Akwarium Gdyńskie<br>
-				15 - Wieża widokowa w Kolibkach<br>
-				16 - Molo w Orłowie<br>
-				17 - Centrum Nauki EXPERYMENT<br>
-				18 - Polanka Redłowska<br>
-				19 - Molo w Brzeźnie<br>
-				20 - Loopy`s World<br>
-				21 - AquaPark Sopot<br>
-				22 - Jump City<br>
-				23 - Zoo w Oliwie<br>
-				24 - Kartuzy<br>
-				25 - Zamek w Łapalicach<br>
-				26 - Sztutowo<br>
-				27 - Rezerwat przyrody Ostrzycki Las<br>
-				28 - Pole golfowe w Postołowie<br>
-				29 - Mewia Łacha<br>
-				30 - Kąty Rybacki<br>
-				31 - Wioska Rybacka Mechelinki<br>
-				32 - Elektrownia Żarnowiec<br>
-				33 - Plaża w Dębkach<br>
-				34 - Jezioro Bieszkowice<br>
-				35 - Kamienne Kręgi w Węsiorach<br>
-				36 - Jezioro Łączyno<br>
-				37 - Sea Towers Gdynia<br>
-				38 - Jezioro Tuchomskie<br>
-				39 - Jezioro Wysockie<br>
-				40 - Jezioro Otomińskie<br>
+				<p ng-repeat="location in AngularLocations | filter:searchText">{{ $index+1 }} - {{ location.desc }}</p>
 				<hr size=2>
 				<br>
 
@@ -279,7 +246,7 @@
 				<li> Możesz ograniczyć wybór do jednego z miast lub skorzystać z filtrowania po kategoriach - W FAZIE TESTÓW<br><br></li>
 				<li> Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi - PREMIUM<br></li>
 				
-				</ol>		
+				</ol>
 		</fieldset>
 	</div>
 	
