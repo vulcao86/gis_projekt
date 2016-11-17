@@ -173,11 +173,11 @@
 		<div>
 		<fieldset>
 		<legend>WYSZUKIWARKA OBIEKTÓW</legend>
-		wpisz nazwę poszukiwanego obiektu albo słowa kluczowe:
+		wpisz nazwę obiektu albo słowa kluczowe:
 		 <input ng-model="searchText"><br>
 		<br>
 		lub<br>
-		wybierz interesujące Cię kategorie z poniższych list<br>
+		wybierz kategorię z list:<br>
 			<!-- kategorie -->
 				<select name=lista_miast form="miasta">
 				<option value="Wszystkie">Wszystkie</option>
@@ -197,7 +197,7 @@
 				<option value="Sport">Sport</option>
 				<option value="Jezioro">Jezioro</option>
 				<option value="Extreme">Extreme</option>
-				</select> <= wybierz kategorię
+				</select> <= wybierz rodzaj
 				<hr size=2>
 
 				<select name=dla_kogo form="Dla_kogo">
@@ -205,7 +205,7 @@
 				<option value="Dzieci">Dzieci</option>
 				<option value="Studenci">Studenci</option>
 				<option value="Seniorzy">Seniorzy</option>
-				</select> <= wybierz kategorię wiek
+				</select> <= wybierz grupę docelową
 				
 				<hr size=2>
 				<select name=odległosc_od_lotniska form="odleglosc_od_lotniska">
@@ -225,7 +225,7 @@
 
 				<hr size=2>
 				<p> Liczba znalezionych obiektów: [ {{(AngularLocations | filter:searchText).length}} ]</p>
-				<p ng-repeat="location in AngularLocations | filter:searchText">{{ $index+1 }} - {{ location.id }} - {{ location.desc }} </p>
+				<p ng-repeat="location in AngularLocations | filter:searchText">{{ location.id }} - {{ location.desc }} </p>
 				<hr size=2>
 				<br>
 
@@ -261,7 +261,7 @@
 	<!-- stopka -->
 	<div>
 		<fieldset>
-			<h8>wszelkie prawa do tesktów oraz kodu źrodłowego zastrzeżone</h8>
+			<h8>wszelkie prawa do tekstów oraz kodu źrodłowego zastrzeżone</h8>
 		</fieldset>
 	</div>
 
