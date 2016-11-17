@@ -53,7 +53,11 @@
 			{id:37, lat: 54.516979, lng: 18.2803482, desc: 'Jezioro Bieszkowice'},
 			{id:38, lat: 54.2573909, lng: 18.0039209, desc: 'Jezioro Łączyno'},
 			{id:39, lat: 54.4256407, lng: 18.4468975, desc: 'Jezioro Wysockie'},
-			{id:40, lat: 54.3160901, lng: 18.4985713, desc: ' Jezioro Otomińskie'}
+			{id:40, lat: 54.3160901, lng: 18.4985713, desc: 'Jezioro Otomińskie'},
+			{id:41, lat: 54.713659, lng: 18.284926, desc: 'Groty Mechowskie', kategorie: 'Extreme'},
+			{id:42, lat: 54.485300, lng: 18.568843, desc: 'Klif w Orłowie', kategorie: 'Extreme'},
+			{id:43, lat: 54.7996345, lng: 18.3958755, desc: 'Aleja Gwiazd Sportu', kategorie: 'Sport', city: 'Wladyslawowo'}
+
 		]
 	};
 	
@@ -79,10 +83,16 @@
     <style>
       #map {
         width: 100%;
-        height: 600px;
+        height: 500px;
         background-color: black;
       }
-	  
+	  body {
+    background-image: url("back.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top right;
+	
+}
     </style>
   </head>
   <body bgcolor="#E6E6FA" ng-controller="MapData">
@@ -149,7 +159,7 @@
 			      } 
 							
 			var liczba_linii = sourceData.AngularLocations.length;		// popup z liczba linii zmiennej sourceData.AngularLocations - liczbie lokacji
-			window.alert("Witaj w naszej aplikacji TRÓJMIEJSKI TURYSTA!\n\n\nMamy już " + liczba_linii + " obiektów w bazie!\n\n\nDzisiaj polecamy odwiedzić $RANDOM_LOCATION");
+			// window.alert("Witaj w naszej aplikacji TRÓJMIEJSKI TURYSTA!\n\n\nMamy już " + liczba_linii + " obiektów w bazie!\n\n\nDzisiaj polecamy odwiedzić $RANDOM_LOCATION");
 	
 			</script>
 			<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"> </script>	
@@ -159,7 +169,7 @@
 			<!-- wybieracz języka -->
 				<fieldset>
 				podaj swoje imię i nazwisko:<br>
-				<form method="get" action="http://127.0.0.1/PWI/logowanie.php">
+				<form method="get" action="http://127.0.0.1/PWI/rejestracja.php">
 				<input type="text" name="imie"><br>
 				<input type="text" name="nazwisko"><br>
 				<input type="submit">  
@@ -224,12 +234,12 @@
 				
 				<hr size=2>
 				<select name=odległosc_od_lotniska form="odleglosc_od_lotniska">
-				<option value=">5km">>5km</option>
+				<option value=">5km"><5km</option>
 				<option value="5-10km">5-10km</option>
 				<option value="10-20km">10-20km</option>
-				<option value="20-30km">10-20km</option>
-				<option value="30-50km">10-20km</option>
-				<option value=">50km">>20km</option>
+				<option value="20-30km">20-30km</option>
+				<option value="30-50km">30-50km</option>
+				<option value=">50km">>50km</option>
 				</select> <= wybierz odległość od lotniska
 		</fieldset>
 		
