@@ -1,11 +1,21 @@
 OPIS
-Aplikacja pozwala turystom odwiedzającym trójmiasto na znalezienie interesujących obiektów podczas pobytu. Do pełnego działania aplikacji wymagane jest połączenie z internetem oraz przeglądarka obsługująca googlemaps API. Nie jest wymagana instalacja żadnych dodatkowych wtyczek.
+Aplikacja pozwala turystom odwiedzającym trójmiasto na znalezienie interesujących obiektów podczas pobytu na ternie Pomorza Gdańskiego (Pomerania & 3city).
+Do pełnego działania aplikacji wymagane jest połączenie z internetem oraz przeglądarka obsługująca googlemaps API. Nie jest wymagana instalacja żadnych dodatkowych wtyczek.
+Możemy poruszać się po mapie w celu znalezienia obiektów w wybranej okolicy lub skorzystać z wyszukiwarki i znaleźć żądany obiekt wpisując słowa kluczowe; miasta, kategorie, rodzaje atrakcji.
 
 TECHNOLOGIE
 Wykorzystana jest biblioteka Googlemaps API, całość jest napisana w html/angulars/javascript/php. Dostępne jest również narzędzie do parsowania plików ze współrzędnymi z googlemaps napisane w bashu - ./konwerter_wspolrzednych.sh
 
 DZIAŁANIE/FUNKCJONALNOŚCI
-Uruchomienie następuje przez otwarcie pliku trojmiejski_turysta.html po czym na ekranie jest wyświetlana mapa wraz ze szczegółową instrukcją korzystania z aplikacji. Dodatkowo w sekcjach menu po prawej stronie można wybrać wersję językową, wyszukać interesujący nas obiekt za pośrednictwem okienka wyszukiwarki oraz dokonać filtracji obiektów. W sekcji lista obiektów są prezentowane wyszukane przez nas obiekty.
+Uruchomienie następuje przez otwarcie pliku trojmiejski_turysta.html po czym na ekranie jest wyświetlana mapa wraz ze szczegółową instrukcją korzystania z aplikacji.
+Dodatkowo w sekcjach menu po prawej stronie można wybrać wersję językową, wyszukać interesujący nas obiekt za pośrednictwem okienka wyszukiwarki oraz dokonać filtracji obiektów. W sekcji lista obiektów są prezentowane wyszukane przez nas obiekty.
+Możemy również dodać nowe obiekty korzystając z narzędzia konwertującego. Potrzebujemy listy linków z odwiedzonych/zaznaczonych punktów na googlemaps, np. $PRZYKLAD1, po czym, korzystając z narzędzia, dodajemy wspolrzedne do listy obiektów (dodać dodawacz do pliku) zawartej w pliku miejsca_001, dodajemy parametry wg komunikatow. W celu sprawdzenia zmian potrzebujemy odświeżyć okno przeglądarki z mapą.
+ver. 1.0.6 2016-11-25
+
+- podlinkowana lista obiektów
+- uporządkowany layout
+- dodane pola do logowania i podawania danych
+- rozszerzony zakres funkcjonalności, więcej dodanych atrybutów do obiektów
 
 ver. 1.0.5 2016-11-16
 
