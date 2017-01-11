@@ -4,12 +4,25 @@ Do pełnego działania aplikacji wymagane jest połączenie z internetem oraz pr
 Możemy poruszać się po mapie w celu znalezienia obiektów w wybranej okolicy lub skorzystać z wyszukiwarki i znaleźć żądany obiekt wpisując słowa kluczowe; miasta, kategorie, rodzaje atrakcji.
 
 TECHNOLOGIE
-Wykorzystana jest biblioteka Googlemaps API, całość jest napisana w html/angulars/javascript/php. Dostępne jest również narzędzie do parsowania plików ze współrzędnymi z googlemaps napisane w bashu - ./konwerter_wspolrzednych.sh
+Wykorzystana jest biblioteka Googlemaps API. Całość jest napisana w html/angulars/javascript/php. Dostępne jest również narzędzie do parsowania plików ze współrzędnymi z googlemaps napisane w bashu - ./konwerter_wspolrzednych.sh
+
+INSTRUKCJA
+do uruchomienia potrzebujemy przeglądarki internetowej obsługującej Googlemaps API. Sugerowana rozdzielczość wyświetlania do przynajmniej 1366x768 (zalecana większa)
 
 DZIAŁANIE/FUNKCJONALNOŚCI
 Uruchomienie następuje przez otwarcie pliku trojmiejski_turysta.html po czym na ekranie jest wyświetlana mapa wraz ze szczegółową instrukcją korzystania z aplikacji.
 Dodatkowo w sekcjach menu po prawej stronie można wybrać wersję językową, wyszukać interesujący nas obiekt za pośrednictwem okienka wyszukiwarki oraz dokonać filtracji obiektów. W sekcji lista obiektów są prezentowane wyszukane przez nas obiekty.
 Możemy również dodać nowe obiekty korzystając z narzędzia konwertującego. Potrzebujemy listy linków z odwiedzonych/zaznaczonych punktów na googlemaps, np. $PRZYKLAD1, po czym, korzystając z narzędzia, dodajemy wspolrzedne do listy obiektów (dodać dodawacz do pliku) zawartej w pliku miejsca_001, dodajemy parametry wg komunikatow. W celu sprawdzenia zmian potrzebujemy odświeżyć okno przeglądarki z mapą.
+
+DODATKOWE NARZEDZIA
+mozliwe jest korzystanie z narzedzia/skryptu 'konwerter_wspolrzednych.sh' do parsowania logow użytkownika i dodawania nowych obiektów do bazy. Dla zadanego logu otrzymujemy plik '*.csv" z miejscami przez nas wybranymi. Zawartość tego pliku należy dołączyć do listy obiektów w programie. Szczegółowy opis działania znajduje się w jego dokumentacji.
+
+ver. 1.0.7 2017-01-11
+
+- wersja w pelni funkcjonalna
+- dodano dokument specyfikacji wymagan SWS
+
+
 ver. 1.0.6 2016-11-25
 
 - podlinkowana lista obiektów
