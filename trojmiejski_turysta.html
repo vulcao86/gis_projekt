@@ -95,9 +95,10 @@
 			<legend>
 				<h2>TRÓJMIEJSKI TURYSTA - interaktywny przewodnik po trójmieście</h2>
 			</legend>
-			<h7>atrakcje turystyczne w trójmieście i okolicach</h7><br>
-			<h8>autor Piotr Słupczewski 2016</h8><br>
-			
+
+			<h7>=atrakcje turystyczne w trójmieście i okolicach=</h7><br>
+			<h8>=autor Piotr Słupczewski 2016=</h8><br>
+			<h8>=skorzystaj z <a href="#instrukcja">instrukcji</a> znajdującej się pod mapą lub użyj <a href="#wyszukiwarka">wyszukiwarki</a> po prawej stronie=</h8>
 	  	</fieldset>
 		
 
@@ -152,7 +153,7 @@
 			      } 
 							
 			var liczba_linii = sourceData.AngularLocations.length;		// popup z liczba linii zmiennej sourceData.AngularLocations - liczbie lokacji
-			// window.alert("Witaj w naszej aplikacji TRÓJMIEJSKI TURYSTA!\n\n\nMamy już " + liczba_linii + " obiektów w bazie!\n\n\nDzisiaj polecamy odwiedzić $RANDOM_LOCATION");
+			window.alert("Witaj w naszej aplikacji TRÓJMIEJSKI TURYSTA\n\nMamy już " + liczba_linii + " zgromadzone obiekty w naszej bazie!\n\n\n\nDzisiaj polecamy odwiedzić 'Twierdza Wisłoujście'");
 	
 			</script>
 			<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"> </script>	
@@ -160,6 +161,7 @@
 		</div>
 		
 			<!-- wybieracz języka -->
+			<!--
 				<fieldset>
 				podaj swoje imię i nazwisko:<br>
 				<form method="get" action="http://127.0.0.1/PWI/rejestracja.php">
@@ -186,17 +188,18 @@
 				</select>
 				
 		</fieldset>
-		
+		-->
 		<!-- wyszukiwarka -->
-		<div>
+		<div id="wyszukiwarka">
 		<fieldset>
-		<legend>WYSZUKIWARKA OBIEKTÓW</legend>
+		<legend><b>WYSZUKIWARKA OBIEKTÓW</b></legend>
 		wpisz nazwę obiektu albo słowa kluczowe:
 		 <input ng-model="searchText"><br>
 		<br>
+		<!--
 		lub<br>
 		wybierz kategorię z list:<br>
-			<!-- kategorie -->
+
 				<select name=lista_miast form="miasta">
 				<option value="Wszystkie">Wszystkie</option>
 				<option value="Gdańsk">Gdańsk</option>
@@ -243,14 +246,15 @@
 				<option value="10-30złm">10-30zł</option>
 				<option value="30-50km">30-50zł</option>
 				<option value=">50km">>50zł</option>
-				</select> <= wybierz cenę
+				</select> <= wybierz cenę 
+				-->
 		</fieldset>
 		
 		
 		
 		<div style="width: 20%; float: right">
 		<!-- legenda -->
-			<fieldset><legend><a href="lista_obiektow.html">LISTA OBIEKTÓW</a></legend>
+			<fieldset><legend><b><i>LEGENDA</i></b></legend>
 	
 
 				<hr size=2>
@@ -262,10 +266,10 @@
 			</fieldset>
 		</div>
 	</div>
-	<div style="width: 100%">
+	<div id="instrukcja" style="width: 100%">
 	<!-- instrukcja-->
 		<fieldset>
-			<legend>INSTRUKCJA</legend>
+			<legend><b>INSTRUKCJA</b></legend>
 				<ol>
 				<li> Punktem odniesienia oznaczonym kropką jest Lotnisko im. Lecha Wałęsy (Lech Walesa Airport)<br><br></li>
 				<img float=left src="NFO/lotnisko.png"></img>
