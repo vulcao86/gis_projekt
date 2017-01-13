@@ -1,18 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="MyApp">
   <head>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&v=3&libraries=geometry"></script>
   <title>
   3miejski turysta
   </title>
+  <script src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+  <script type="text/javascript">
+	var sourceData=
+	{
+		"AngularLocations": [
+			{id:1, lat: 54.3958446, lng: 18.6791611, desc: 'Twierdza Wisłoujście', city: 'Gdańsk', price: '0'}, // wspolrzedne Twierdzy Wisloujscie
+			{id:2, lat: 54.3662345, lng: 18.6333818, desc: 'Pomnik Czołgistów', city: 'Gdańsk', price: '0'},  // wspolrzednie Pomnika Czolgistow
+			{id:3, lat: 54.2263371, lng: 18.1257875, desc: 'Wieża widokowa w Szymbarku', price: '2'},  // wspolrzednie Wiezy WIdokowej w Szymbarku
+			{id:4, lat: 54.4062365, lng: 18.6650217, desc: 'Pomnik Westerplatte', city: 'Gdańsk', price: '0'}, // pomnik Westerplatte
+			{id:5, lat: 54.3592272, lng: 18.7962239, desc: 'Rezerwat Ptasi Raj', city: 'Gdańsk', price: '0'}, // rezerwat Ptasi Raj
+			{id:6, lat: 54.3740043, lng: 18.5918122, desc: 'Podleśna Polana', city: 'Gdańsk', price: '0'},  // Podleśna Polana
+			{id:7, lat: 54.3920682, lng: 18.5281136, desc: 'Diabelski Kamień', city: 'Gdańsk', price: '0'}, // Diabelski Kamień
+			{id:8, lat: 54.3725803, lng: 18.6123986, desc: 'Nowe ETI', city: 'Gdańsk', price: '1000'}, // Nowe ETI
+			{id:9, lat: 54.3577307, lng: 18.64007, desc: 'Krzyż Milenijny', city: 'Gdańsk', price: '0'}, // Krzyż Milenijny
+			{id:10, lat: 54.4110984, lng: 18.545246, desc: 'Park Oliwski', city: 'Gdańsk', price: '0'}, // Park Oliwski
+			{id:11, lat: 54.4054872, lng: 18.5969678, desc: 'Park im. Ronalda Reagana', city: 'Gdańsk', price: '0'}, // Park im. Ronalda Reagana
+			{id:12, lat: 54.3858642, lng: 18.6620403, desc: 'Stadion Energa Gdańsk ', city: 'Gdańsk', price: '50'}, // Stadion Energa Gdańsk 
+			{id:13, lat: 54.384044, lng: 18.610013, desc: 'Fontanna na placu Wybickiego', city: 'Gdańsk', price: '0'}, // Fontanna na placu Wybickiego
+
+			{id:14, lat: 54.5085996, lng: 18.5993132, desc: 'Akwarium Gdyńskie', city: 'Gdynia', price: '10'}, // Akwarium Gdyńskie
+			{id:15, lat: 54.4825498, lng: 18.5526353, desc: 'Wieża widokowa w Kolibkach', city: 'Gdynia', price: '0'}, // WIeża widokowa w Kolibkach
+			{id:16, lat: 54.4844069, lng: 18.5544926, desc: 'Molo w Orłowie', city: 'Gdynia', price: '0'}, // Molo w Orłowie
+			{id:17, lat: 54.4937674, lng: 18.5383364, desc: 'Centrum Nauki EXPERYMENT', city: 'Gdynia', price: '0'}, // Centrum Nauki EXPERYMENT
+			{id:18, lat: 54.5023296, lng: 18.5541659, desc: 'Polanka Redłowska', city: 'Gdynia', price: '0'}, // Polanka Redłowska
+			{id:19, lat: 54.4081785, lng: 18.6247113, desc: 'Molo w Brzeźnie', city: 'Gdańsk', price: '0'}, // Molo w Brzeźnie
+			//dla dzieci
+			{id:21, lat: 54.3906634, lng: 18.5855229, desc: 'Loopy`s World', city: 'Gdańsk', price: '75'}, // Loopy`s World
+			{id:22, lat: 54.4599979, lng: 18.5556688, desc: 'AquaPark Sopot', city: 'Sopot', price: '100'}, // AquaPark SOpot
+			{id:23, lat: 54.5249063, lng: 18.5361164, desc: 'Jump City', city: 'Gdynia', price: '50'}, // Jump City
+			// miejsca poza trojmiastem
+			{id:23, lat: 54.4206255, lng: 18.5059221, desc: 'Zoo w Oliwie', city: 'Gdańsk', price: '20'},
+			{id:24, lat: 54.3362758, lng: 18.1785754, desc: 'Kartuzy', price: '0'},
+			{id:25, lat: 54.3439024, lng: 18.1248128, desc: 'Zamek w Łapalicach', price: '0'},
+			{id:26, lat: 54.3283309, lng: 19.1635032, desc: 'Sztutowo', price: '0'},
+			{id:27, lat: 54.264359, lng: 18.0752463, desc: 'Rezerwat przyrody Ostrzycki Las', price: '0'},
+			{id:28, lat: 54.1313779, lng: 18.4474935, desc: 'Pole golfowe w Postołowie', price: '0'},
+			{id:29, lat: 54.3394901, lng: 18.9633035, desc: 'Mewia Łacha', price: '0'},
+			{id:30, lat: 54.3393028, lng: 19.2209615, desc: 'Kąty Rybackie', price: '0'},
+			{id:31, lat: 54.6086994, lng: 18.5030418, desc: 'Wioska Rybacka Mechelinki', price: '0'},
+			{id:32, lat: 54.7875789, lng: 18.0763848, desc: 'Elektrownia Żarnowiec', price: '0'},
+			{id:33, lat: 54.8274718, lng: 18.0784074, desc: 'Plaża w Dębkach', price: '0'},
+			{id:34, lat: 54.2323438, lng: 17.8449477, desc: 'Kamienne Kręgi w Węsiorach', price: '0'},
+			{id:35, lat: 54.5218293, lng: 18.5474492, desc: 'Sea Towers Gdynia', city: 'Gdynia', price: '0'},
+			// jeziorka
+			{id:36, lat: 54.4283519, lng: 18.3577969, desc: 'Jezioro Tuchomskie', price: '0'},
+			{id:37, lat: 54.516979, lng: 18.2803482, desc: 'Jezioro Bieszkowice', price: '0'},
+			{id:38, lat: 54.2573909, lng: 18.0039209, desc: 'Jezioro Łączyno', price: '0'},
+			{id:39, lat: 54.4256407, lng: 18.4468975, desc: 'Jezioro Wysockie', price: '0'},
+			{id:40, lat: 54.3160901, lng: 18.4985713, desc: 'Jezioro Otomińskie', price: '0'},
+			{id:41, lat: 54.713659, lng: 18.284926, desc: 'Groty Mechowskie', kategorie: 'Extreme', price: '0'},
+			{id:42, lat: 54.485300, lng: 18.568843, desc: 'Klif w Orłowie', kategorie: 'Extreme', price: '0'},
+			{id:43, lat: 54.7996345, lng: 18.3958755, desc: 'Aleja Gwiazd Sportu', kategorie: 'Sport', city: 'Wladyslawowo', price: '0'}
+
+		]
+	};
+	
+	var app = angular.module('MyApp',[]);		
+	app.controller("MapData",['$scope', function($scope) {
+		getRandomIndex = function(){
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+		for(var prop in sourceData)
+		{
+			$scope[prop] = sourceData[prop];
+		}
+	}]);  		
+	app.filter('num', function() {
+		return function(input) {
+		  return parseInt(input, 10);
+	
+		}
+	});
+	
+	</script>
    <meta charset="utf-8">
     <style>
       #map {
         width: 100%;
-        height: 400px;
+        height: 500px;
         background-color: black;
       }
-	  
     </style>
 	<style media="screen" type="text/css">
 
@@ -20,11 +94,15 @@
 
 	</style>
   </head>
+<<<<<<< HEAD
   <body bgcolor="#E6E6FA">
   
  
   
   
+=======
+  <body bgcolor="#E6E6FA" ng-controller="MapData">
+>>>>>>> be78d504df845759ce0d2902fd3bd8262b47e5bf
   	<!-- nagłówek -->
 	<div>
 		<fieldset>
@@ -33,8 +111,10 @@
 			</legend>
 			atrakcje turystyczne w trójmieście i okolicach<br>
 			<h8>autor Piotr Słupczewski 2016</h8><br>
+			
 	  	</fieldset>
-	
+		
+
 	</div>
 	<hr>
 	<div style="width: 100%">
@@ -47,7 +127,7 @@
 				<div id="map"></div>
 			</fieldset>
 			<script>
-			      function initMap() {
+			    function initMap() {
 				var wspolrzedne = {lat: 54.379903, lng: 18.493576}; // wspolrzedne inicjalizacji srodka mapy - Lotniska im. Walesy
 				var map = new google.maps.Map(document.getElementById('map'), {
 				  zoom: 9,
@@ -68,13 +148,17 @@
 					a = i.toString()
 					labels.push(a)
 				};
+<<<<<<< HEAD
 				console.log(labels);
 				console.log(distance);
+=======
+				
+>>>>>>> be78d504df845759ce0d2902fd3bd8262b47e5bf
 				// Add some markers to the map.
 				// Note: The code uses the JavaScript Array.prototype.map() method to
 				// create an array of markers based on a given "locations" array.
 				// The map() method here has nothing to do with the Google Maps API.
-				var markers = locations.map(function(location, i) {
+				var markers = sourceData.AngularLocations.map(function(location, i) {
 				  return new google.maps.Marker({
 				    position: location,
 				    label: labels[i % labels.length]
@@ -84,6 +168,7 @@
 				// Add a marker clusterer to manage the markers.
 				var markerCluster = new MarkerClusterer(map, markers,
 				    {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+<<<<<<< HEAD
 			      }
 				  
 				  //var latLngA = [{lat: 54.3958446, lng: 18.6791611}];
@@ -145,25 +230,34 @@
 				
 			      ]
 				
+=======
+			      } 
+>>>>>>> be78d504df845759ce0d2902fd3bd8262b47e5bf
 							
-			var liczba_linii = locations.length;		// popup z liczba linii zmiennej locations - liczbie lokacji
-			window.alert("Witaj w naszej aplikacji TRÓJMIEJSKI TURYSTA!\n\n\nMamy już " + liczba_linii + " obiektów w bazie!\n\n\nDzisiaj polecamy odwiedzić $RANDOM_LOCATION");
+			var liczba_linii = sourceData.AngularLocations.length;		// popup z liczba linii zmiennej sourceData.AngularLocations - liczbie lokacji
+			// window.alert("Witaj w naszej aplikacji TRÓJMIEJSKI TURYSTA!\n\n\nMamy już " + liczba_linii + " obiektów w bazie!\n\n\nDzisiaj polecamy odwiedzić $RANDOM_LOCATION");
 	
-			var txtFile = new XMLHttpRequest();
-			txtFile.open("GET", "wspolrzedne_all.txt", true);
-			allText = txtFile.responseText;
-			lines = txtFile.responseText.split("\n");
-			console.log("debug");			
-			console.log(lines);
-			console.log(allText);
-			console.log("debug");
 			</script>
 			<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"> </script>	
 			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0Sw7I4u88335ypaY520YYxDGMj4V0lD8&callback=initMap"> </script>
 		</div>
 		
 			<!-- wybieracz języka -->
-		
+				<fieldset>
+				podaj swoje imię i nazwisko:<br>
+				<form method="get" action="http://127.0.0.1/PWI/rejestracja.php">
+				<input type="text" name="imie"><br>
+				<input type="text" name="nazwisko"><br>
+				<input type="submit">  
+				</form>
+				albo
+				swoje login i hasło:<br>
+				<form method="get" action="http://127.0.0.1/PWI/logowanie.php">
+				<input type="text" name="login"><br>
+				<input type="text" name="haslo"><br>
+				<input type="submit">  
+				</form>
+				</fieldset>
 		<fieldset>
 		<legend>WYBIERZ JĘZYK</legend>
 
@@ -180,27 +274,19 @@
 		<div>
 		<fieldset>
 		<legend>WYSZUKIWARKA OBIEKTÓW</legend>
-		<input type=fields>
-		</input>
+		wpisz nazwę obiektu albo słowa kluczowe:
+		 <input ng-model="searchText"><br>
 		<br>
-		wpisz nazwę poszukiwanego obiektu albo słowa kluczowe:
-		</fieldset>
-		</>
-		
-		
-		
-		<div style="width: 20%; float: right">
-		<!-- legenda -->
-			<fieldset><legend>LEGENDA MAPY</legend>
-	
-	<!-- kategorie -->
+		lub<br>
+		wybierz kategorię z list:<br>
+			<!-- kategorie -->
 				<select name=lista_miast form="miasta">
 				<option value="Wszystkie">Wszystkie</option>
 				<option value="Gdańsk">Gdańsk</option>
 				<option value="Sopot">Sopot</option>
 				<option value="Gdynia">Gdynia</option>
 				<option value="Poza_trojmiastem">Inne</option>
-				</select>wybierz miasto
+				</select> <= wybierz miasto
 
 				<hr size=2>
 				<select name=kategorie form="kategorie">
@@ -212,7 +298,7 @@
 				<option value="Sport">Sport</option>
 				<option value="Jezioro">Jezioro</option>
 				<option value="Extreme">Extreme</option>
-				</select>wybierz kategorię
+				</select> <= wybierz rodzaj
 				<hr size=2>
 
 				<select name=dla_kogo form="Dla_kogo">
@@ -220,57 +306,39 @@
 				<option value="Dzieci">Dzieci</option>
 				<option value="Studenci">Studenci</option>
 				<option value="Seniorzy">Seniorzy</option>
-				</select>wybierz kategorię wiek
+				</select> <= wybierz grupę docelową
 				
 				<hr size=2>
 				<select name=odległosc_od_lotniska form="odleglosc_od_lotniska">
-				<option value=">5km">>5km</option>
+				<option value=">5km"><5km</option>
 				<option value="5-10km">5-10km</option>
 				<option value="10-20km">10-20km</option>
-				<option value=">20km">>20km</option>
-				</select>wybierz odległość od lotniska
+				<option value="20-30km">20-30km</option>
+				<option value="30-50km">30-50km</option>
+				<option value=">50km">>50km</option>
+				</select> <= wybierz odległość od lotniska
+				
 				<hr size=2>
+				<select name=cena form="cena">
+				<option value=">0">0</option>
+				<option value="<5zł"> mniej niż 5zł</option>
+				<option value="5-10zł">5-10zł</option>
+				<option value="10-30złm">10-30zł</option>
+				<option value="30-50km">30-50zł</option>
+				<option value=">50km">>50zł</option>
+				</select> <= wybierz cenę
+		</fieldset>
+		
+		
+		
+		<div style="width: 20%; float: right">
+		<!-- legenda -->
+			<fieldset><legend><a href="lista_obiektow.html">LISTA OBIEKTÓW</a></legend>
+	
 
-				1 - Twierdza Wisłoujście<br>
-				2 - Pomnik Czołgistów<br>
-				3 - Wieża widokowa w Szymbarku<br>
-				4 - Pomnik Westerplatte<br>
-				5 - Rezerwat Ptasi Raj<br>
-				6 - Podleśna Polana<br>
-				7 - Diabelski Kamień<br>
-				8 - Nowe ETI<br>
-				9 - Krzyż Milenijny<br>
-				10 - Park Oliwski<br>
-				11 - Park im. Ronalda Reagana<br>
-				12 - Stadion Energa Gdańsk<br>
-				13 - Fontanna na placu Wybickiego<br>
-				14 - Akwarium Gdyńskie<br>
-				15 - Wieża widokowa w Kolibkach<br>
-				16 - Molo w Orłowie<br>
-				17 - Centrum Nauki EXPERYMENT<br>
-				18 - Polanka Redłowska<br>
-				19 - Molo w Brzeźnie<br>
-				20 - Loopy`s World<br>
-				21 - AquaPark Sopot<br>
-				22 - Jump City<br>
-				23 - Zoo w Oliwie<br>
-				24 - Kartuzy<br>
-				25 - Zamek w Łapalicach<br>
-				26 - Sztutowo<br>
-				27 - Rezerwat przyrody Ostrzycki Las<br>
-				28 - Pole golfowe w Postołowie<br>
-				29 - Mewia Łacha<br>
-				30 - Kąty Rybacki<br>
-				31 - Wioska Rybacka Mechelinki<br>
-				32 - Elektrownia Żarnowiec<br>
-				33 - Plaża w Dębkach<br>
-				34 - Jezioro Bieszkowice<br>
-				35 - Kamienne Kręgi w Węsiorach<br>
-				36 - Jezioro Łączyno<br>
-				37 - Sea Towers Gdynia<br>
-				38 - Jezioro Tuchomskie<br>
-				39 - Jezioro Wysockie<br>
-				40 - Jezioro Otomińskie<br>
+				<hr size=2>
+				<p> Liczba znalezionych obiektów: [ {{(AngularLocations | filter:searchText).length}} ]</p>
+				<p ng-repeat="location in AngularLocations | filter:searchText">{{ location.id }} - {{ location.desc }} </p>
 				<hr size=2>
 				<br>
 
@@ -289,6 +357,7 @@
 				<fieldset>
 				<ul>
 				<li> Kolorowe kółka oznaczają miejsca o większym zagęszczeniu atrakcji w danym obszarze. Kliknij na kolorowe kółko z liczbą atrakcji w danym rejonie w celu przybliżenia obszaru i uzyskania szczegółowych informacji o konkretnych lokalizacjach w zadanej okolicy<br><br></li>
+<<<<<<< HEAD
 
 				<img float=left src="NFO/cluster_photo.png" class="border"></img></li>
 				<img float=left src="NFO/cluster_photo2.png" class="border"></img></li>
@@ -302,12 +371,21 @@
 				</fieldset>
 				<fieldset>
 				<ul>
+=======
+				<img float=left src="NFO/cluster_photo.png"></img></li>
+				<img float=left src="NFO/cluster_photo2.png"></img></li>
+				<img float=left src="NFO/cluster_photo3.png"></img>
+				<img float=left src="NFO/cluster_photo4.png"></img>
+				<li> Obok znajduje się legenda - spis miejsc (POI) oznaczonych na mapie<br><br></li>
+				<img float=left src="NFO/legenda.png"></img>
+>>>>>>> be78d504df845759ce0d2902fd3bd8262b47e5bf
 				<li> Miejsca warto odwiedzenia (POI) są oznaczone "przypinkami" z oznaczeniami liczby porządkowej lokacji z listy</li>
 				<img float=left src="NFO/lokacja.png" class="border"></img>
 				</fieldset>
 				<fieldset>
 				<ul>
 				<li> Poszczególne miejsca warte odwiedzenia są oznaczone znacznikami z liczbami np. 1 - Twierdza WIsłoujście, patrz legenda<br><br></li>
+<<<<<<< HEAD
 				</fieldset>
 				<fieldset>
 				<ul>
@@ -316,6 +394,13 @@
 				<fieldset>
 				<ul>
 				<li> Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi - PREMIUM<br></li>		
+=======
+				<li> Możesz skorzystać z wyszukiwarki - wpisz słowa kluczowe np. miasto, jezioro, pomnik (lub inny typ obiektu), odległość w km od lotniska<br><br></li>
+				<img float=left src="NFO/search.png"></img>
+				<li> Jeżeli chcesz dodać swoje POI, skorzystaj z dostępnego narzędzia konwersji - potrzebujesz pliku CSV z współrzędnymi - PREMIUM<br></li>
+				
+				</ol>
+>>>>>>> be78d504df845759ce0d2902fd3bd8262b47e5bf
 		</fieldset>
 	</div>
 	
@@ -323,8 +408,9 @@
 	<!-- stopka -->
 	<div>
 		<fieldset>
-			<h8>wszelkie prawa do tesktów oraz kodu źrodłowego zastrzeżone</h8>
+			<h8>wszelkie prawa do tekstów oraz kodu źrodłowego zastrzeżone</h8>
 		</fieldset>
+
 	</div>
 
 	
