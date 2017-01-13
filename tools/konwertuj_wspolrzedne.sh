@@ -27,4 +27,8 @@
 # sed -e 's/.*@//' ./POI/miejsca_poza_trojmiastem.csv | cut -d "," -f1,2 | sed 's/^/{lat: /' | sed 's/$/}/' | sed 's/,/, lng: /' >> ./POI/miejsca_poza_trojmiastem_gotowe.csv
 
 
+<<<<<<< HEAD
 sed -e 's/.*@//' ./jeziora.txt | cut -d "," -f1,2 | sed 's/^/{lat: /' | sed 's/$/}/' | sed 's/,/, lng: /' >> ./jeziora_gotowe.csv
+=======
+sed -e 's/.*@//' ./lasy.txt | cut -d "," -f1,2 | sed 's/^/{lat: /' | sed 's/$/}/' | sed 's/,/, lng: /' >> ./lasy_gotowe.csv
+>>>>>>> 5b098a67f737627debed19c4297cceff9158928e
